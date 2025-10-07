@@ -1,0 +1,16 @@
+html, body, #root {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Align page titles with drawer links by removing default top margins */
+h1, h2 {
+  margin-top: 0;
+}

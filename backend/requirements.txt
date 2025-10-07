@@ -1,0 +1,5 @@
+fastapi==0.114.0
+uvicorn[standard]==0.30.6
+python-jose[cryptography]==3.3.0
+pandas==2.2.0
+pyarrow==15.0.0
