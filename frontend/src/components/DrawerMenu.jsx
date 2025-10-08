@@ -16,6 +16,7 @@ import DescriptionIcon from '@mui/icons-material/Description'
 import LogoutIcon from '@mui/icons-material/Logout'
 import AddIcon from '@mui/icons-material/Add'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
+import AssessmentIcon from '@mui/icons-material/Assessment'
 
 const DRAWER_WIDTH = 260
 
@@ -24,6 +25,7 @@ export default function DrawerMenu({ userName = 'Utilisateur', onLogout }) {
     { text: 'Accueil', path: '/', icon: <HomeIcon /> },
     { text: 'Portfolio', path: '/portfolio', icon: <AccountBalanceWalletIcon /> },
     { text: 'Opportunités', path: '/opportunites', icon: <AddIcon /> },
+    { text: 'Analyse', path: '/analyse', icon: <AssessmentIcon /> },
     { text: 'Contact', path: '/form', icon: <DescriptionIcon /> }
   ]
 

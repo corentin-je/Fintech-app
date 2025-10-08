@@ -6,6 +6,7 @@ import MyFormPage from './pages/MyFormPage.jsx'
 import Login from './pages/Login.jsx'
 import Opportunites from './pages/Opportunites.jsx'
 import Portfolio from './pages/Portfolio.jsx'
+import Analyse from './pages/Analyse.jsx'
 import { useEffect, useState } from 'react'
 
 const DRAWER_WIDTH = 260
@@ -99,6 +100,7 @@ export default function App() {
               <Route path="/form" element={<MyFormPage />} />
               <Route path="/opportunites" element={<Opportunites />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/analyse" element={<Analyse />} />
             </Routes>
           </Box>
         </Box>
