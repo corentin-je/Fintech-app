@@ -15,14 +15,16 @@ import HomeIcon from '@mui/icons-material/Home'
 import DescriptionIcon from '@mui/icons-material/Description'
 import LogoutIcon from '@mui/icons-material/Logout'
 import AddIcon from '@mui/icons-material/Add'
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 
 const DRAWER_WIDTH = 260
 
 export default function DrawerMenu({ userName = 'Utilisateur', onLogout }) {
   const menuItems = [
     { text: 'Accueil', path: '/', icon: <HomeIcon /> },
-    { text: 'Formulaire', path: '/form', icon: <DescriptionIcon /> },
-    { text: 'Opportunités', path: '/opportunites', icon: <AddIcon /> }
+    { text: 'Portfolio', path: '/portfolio', icon: <AccountBalanceWalletIcon /> },
+    { text: 'Opportunités', path: '/opportunites', icon: <AddIcon /> },
+    { text: 'Contact', path: '/form', icon: <DescriptionIcon /> }
   ]
 
   // Fonction pour obtenir les initiales
@@ -45,7 +47,8 @@ export default function DrawerMenu({ userName = 'Utilisateur', onLogout }) {
           boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
-          borderRight: 'none'
+          borderRight: 'none',
+          bgcolor: '#fafafa'
         }
       }}
     >
@@ -74,6 +77,9 @@ export default function DrawerMenu({ userName = 'Utilisateur', onLogout }) {
         </Avatar>
         <Typography variant="body1" sx={{ fontWeight: 600, textAlign: 'center' }}>
           {userName}
+        </Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ textAlign: 'center', mt: 0.5 }}>
+          Connecté
         </Typography>
       </Box>
 

@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx'
 import MyFormPage from './pages/MyFormPage.jsx'
 import Login from './pages/Login.jsx'
 import Opportunites from './pages/Opportunites.jsx'
+import Portfolio from './pages/Portfolio.jsx'
 import { useEffect, useState } from 'react'
 
 const DRAWER_WIDTH = 260
@@ -17,6 +18,10 @@ const theme = createTheme({
     secondary: {
       main: '#dc004e',
     },
+    background: {
+      default: '#fafafa',
+      paper: '#ffffff',
+    },
   },
 })
 
@@ -27,9 +32,34 @@ export default function App() {
   useEffect(() => {
     const t = localStorage.getItem('token')
     const storedUserName = localStorage.getItem('userName')
-    if (t) setToken(t)
-    if (storedUserName) setUserName(storedUserName)
+    if (t) {
+      setToken(t)
+      // Si le userName n'est pas en localStorage, le récupérer depuis l'API
+      if (storedUserName) {
+        setUserName(storedUserName)
+      } else {
+        fetchUserName(t)
+      }
+    }
   }, [])
+
+  const fetchUserName = async (token) => {
+    try {
+      const response = await fetch('http://localhost:8000/auth/me', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      if (response.ok) {
+        const data = await response.json()
+        const username = data.username
+        setUserName(username)
+        localStorage.setItem('userName', username)
+      }
+    } catch (error) {
+      console.error('Erreur lors de la récupération du nom d\'utilisateur:', error)
+    }
+  }
 
   const logout = () => {
     localStorage.removeItem('token')
@@ -54,19 +84,21 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+        <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: 'background.default' }}>
           <DrawerMenu userName={userName} onLogout={logout} />
           <Box
             component="main"
             sx={{
               flexGrow: 1,
-              width: { sm: `calc(100% - ${DRAWER_WIDTH}px)` }
+              width: { sm: `calc(100% - ${DRAWER_WIDTH}px)` },
+              bgcolor: 'background.default'
             }}
           >
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/form" element={<MyFormPage />} />
               <Route path="/opportunites" element={<Opportunites />} />
+              <Route path="/portfolio" element={<Portfolio />} />
             </Routes>
           </Box>
         </Box>

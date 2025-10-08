@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers.my_home_page import router as home_router
 from app.routers.auth import router as auth_router
 from app.routers.opportunites import router as opportunites_router
+from app.routers.portfolio import router as portfolio_router
 
 app = FastAPI(title="Fullstack Starter API")
 
@@ -29,3 +30,4 @@ def health_check():
 app.include_router(home_router)
 app.include_router(auth_router)
 app.include_router(opportunites_router)
+app.include_router(portfolio_router)

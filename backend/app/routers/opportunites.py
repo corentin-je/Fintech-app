@@ -13,7 +13,7 @@ async def get_opportunites():
     """
     try:
         # Chemin vers le fichier parquet
-        file_path = os.path.join(os.path.dirname(__file__), "..", "services", "opportunites_20251007_101504.parquet")
+        file_path = os.path.join(os.path.dirname(__file__), "..", "services", "opportunites_2.parquet")
         
         # Vérifier si le fichier existe
         if not os.path.exists(file_path):

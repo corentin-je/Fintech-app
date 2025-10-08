@@ -56,10 +56,10 @@ export default function MyFormPage() {
         }}
       >
         <Typography variant="h4" component="h1" sx={{ fontWeight: 600, mb: 2 }}>
-          Formulaire
+          Contact
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          Utilisez ce formulaire pour soumettre vos données.
+          Contactez-nous pour toute question ou demande.
         </Typography>
       </Box>
 

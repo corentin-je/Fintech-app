@@ -8,7 +8,6 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Button,
   Box,
   CircularProgress,
   Alert,
@@ -17,9 +16,9 @@ import {
   Divider,
   Grid,
   Card,
-  CardContent
+  CardContent,
+  Link
 } from '@mui/material'
-import AnalyticsIcon from '@mui/icons-material/Analytics'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
@@ -244,15 +243,21 @@ export default function Opportunites() {
                   </TableCell>
                 ))}
                 <TableCell sx={{ border: 'none' }}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size="small"
-                    startIcon={<AnalyticsIcon />}
+                  <Link
+                    component="button"
+                    variant="body2"
                     onClick={() => handleAnalyse(opp)}
+                    sx={{
+                      cursor: 'pointer',
+                      fontWeight: 500,
+                      textDecoration: 'none',
+                      '&:hover': {
+                        textDecoration: 'underline'
+                      }
+                    }}
                   >
                     Analyse
-                  </Button>
+                  </Link>
                 </TableCell>
               </TableRow>
             ))}

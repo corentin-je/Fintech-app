@@ -16,20 +16,20 @@ export default function Home() {
         }}
       >
         <Typography variant="h4" component="h1" sx={{ fontWeight: 600, mb: 2 }}>
-          Accueil
+          Bienvenue
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          Bienvenue sur l'application Fullstack Starter avec Material UI.
+          La gestion patrimoniale simplifiée
         </Typography>
       </Box>
 
       {/* Contenu de la page */}
       <Paper elevation={2} sx={{ p: 4, borderRadius: 2 }}>
         <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-          Contenu de la page
+          Fonctionnalités :
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Le contenu principal de votre page d'accueil s'affiche ici.
+          Gestion portefeuille, analyse des opportunités d'investissement, simulation, recommandations
         </Typography>
       </Paper>
     </Box>
